@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Image utilities
+   ========================================================================== */
+
+/**
+ * Image replacement technique, see http://bit.ly/NgnSfH for details.
+ */
+
+.u-imageReplace {
+  overflow: hidden !important;
+
+  border: 0 !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+}
+
+/**
+ * If the IR'ed element has bottom-padding, then either it needs to be
+ * removed or the height needs to be bumped up (e.g., set to 200%).
+ */
+
+.u-imageReplace:before {
+  content: "";
+
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/**
+ * Responsive image
+ *
+ * 1. Maximum width of its parent.
+ * 2. Remove the gap between images and the bottom of their containers.
+ * 3. Scale the height properly ensuring the right ratio.
+ */
+
+.u-imageResponsive {
+  max-width: 100%; /* 1 */
+  vertical-align: middle; /* 2 */
+  height: auto; /* 3 */
+}
